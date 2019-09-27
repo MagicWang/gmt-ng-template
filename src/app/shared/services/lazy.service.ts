@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, ReplaySubject } from 'rxjs';
+import { Observable, ReplaySubject, concat, defer } from 'rxjs';
 
 /**
  * 延迟加载第三方类库服务(ng-alain自带LazyService返回Promise不好用，请使用此Observable版本)
@@ -16,14 +16,10 @@ export class LazyService {
    * 加载高德地图类库
    */
   loadAMap(): Observable<any> {
-    return new Observable(subscriber => {
-      this.loadScript('https://webapi.amap.com/maps?v=1.4.15&key=42055b210625ca30b9afa2388b9497b0').subscribe(() => {
-        this.loadScript('https://webapi.amap.com/ui/1.0/main.js').subscribe(() => {
-          subscriber.next();
-          subscriber.complete();
-        });
-      });
-    });
+    return concat(
+      defer(() => this.loadScript('https://webapi.amap.com/maps?v=1.4.15&key=42055b210625ca30b9afa2388b9497b0')),
+      defer(() => this.loadScript('https://webapi.amap.com/ui/1.0/main.js')),
+    );
   }
   /**
    * 加载js

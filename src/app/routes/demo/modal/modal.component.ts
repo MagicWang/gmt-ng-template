@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
 import { BaseComponent } from '@gmt/ui';
 import { UserModalComponent } from './user-modal/user-modal.component';
 import * as _ from 'lodash';

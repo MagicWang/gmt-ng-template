@@ -46,7 +46,6 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "ajv": "^6.10.2",
     "lodash": "^4.17.15",
-    "ng-alain": "^8.4.0",
     "ng-zorro-antd": "^8.2.1",
     "rxjs": "~6.4.0",
     "screenfull": "^4.2.1",

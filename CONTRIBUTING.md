@@ -410,7 +410,7 @@ export class HeroComponent implements OnInit {
 - Modal弹窗请使用js方式弹出，以封装逻辑，增加复用性，参考demo
 - 组件声明放到COMPONENTS数组中，需要动态创建(如弹窗)的组件放到COMPONENTS_NOROUNT数组中
 - dom事件注册推荐使用rxjs的fromEvent，返回可观察对象，pipe里可做更多防抖、节流等操作
-- dom事件注册推荐使用rxjs的fromEvent，返回可观察对象，pipe里可做更多防抖、节流等操作
+- 异步优先使用rxjs,比promise更强大，操作符更多，支持发射多个值，可取消
 
 #### 八、开发流程
 
@@ -424,9 +424,8 @@ export class HeroComponent implements OnInit {
 
 #### 九、后续优化
 
-- 与前端人员确定常用组件、服务、工具等，提取到跨工程的库@gmt/ui，并在CHANGELOG.md做好版本记录，发布到npm
-- 脚手架工程@gmt/cli发布到npm
-- 完善模板工程gmt-ng-template，补充更多的公共组件、示例，做好版本变更记录，上传git。
+- 与前端人员确定常用组件、服务、工具等，提取到跨工程的库@gmt/ui，并在CHANGELOG.md做好版本记录
+- 完善模板工程gmt-ng-template，补充更多的公共组件、示例，做好版本变更记录。
 - 开发vscode插件，提供代码片段，更方便的生成基于BaseComponent、BaseService的组件、服务。
 - 开发form弹窗组件基类
 - Swagger自动生成后台接口代码
