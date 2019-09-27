@@ -1,0 +1,10 @@
+<page-header></page-header>
+<p>例如后端定义字典:{{ {'0':'未知','1':'未发送','2':'发送中','3':'已发送'}| json}}</p>
+<p>传统方法通过if判断，在前端界面显示对应的值，如果后端修改了语义，前端要大面积改代码</p>
+<p>{{oldCode1}}</p>
+<p>{{oldCode2}}</p>
+<p>通过ngx-translate引入多语言功能，在src/assets/temp/dic下定义对应字典，前端可通过如下代码直接得到相应的值，如果后端变化，只需要修改对应字典即可</p>
+<p>{{code0}} -> {{'status.0' | translate}}</p>
+<p>{{code1}} -> {{'status.1' | translate}}</p>
+<p>{{code2}} -> {{'status.2' | translate}}</p>
+<p>{{code3}} -> {{'status.3' | translate}}</p>
